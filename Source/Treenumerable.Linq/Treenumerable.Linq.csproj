@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08E98C3C-DBA8-468B-BB96-E21AAF483FDC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Treenumerable.Linq</RootNamespace>
+    <AssemblyName>Treenumerable.Linq</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile2</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Comparers\OrderByComparer.cs" />
+    <Compile Include="IOrderedVirtualForest.cs" />
+    <Compile Include="DepthNode.cs" />
+    <Compile Include="INode.cs" />
+    <Compile Include="IVirtualForest.cs" />
+    <Compile Include="Comparers\CompoundComparer.cs" />
+    <Compile Include="OrderedVirtualForest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PruneOption.cs" />
+    <Compile Include="TreeWalkers\DepthTreeWalker.cs" />
+    <Compile Include="TreeWalkers\InternalsTreeWalker.cs" />
+    <Compile Include="TreeWalkers\OrderChildrenByTreeWalker.cs" />
+    <Compile Include="TreeWalkers\PruneTreeWalker.cs" />
+    <Compile Include="TreeWalkers\WhereTreeWalker.cs" />
+    <Compile Include="TreeWalkers\ScanTreeWalker.cs" />
+    <Compile Include="VirtualForest.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.ChildAt.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Children.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.ChildrenByKey.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Descendants.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.DescendantsByKey.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.FollowingSiblings.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.FollowingSiblingsAndSelf.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Internals.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Leaves.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Level.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.MaxDepth.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.OrderChildrenBy.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.OrderChildrenByDescending.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Parents.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.PrecedingSiblings.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.PrecedingSiblingsAndSelf.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Prune.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Scan.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.ScanDepth.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Select.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.SelectMany.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Siblings.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.SiblingsAndSelf.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.ThenChildrenBy.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.ThenChildrenByDescending.cs" />
+    <Compile Include="VirtualForestExtensions\VirtualForestExtensions.Where.cs" />
+    <Compile Include="VirtualForestFactory.cs" />
+    <Compile Include="WrappedNode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Treenumerable, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Treenumerable.2.1.0\lib\portable-net40+sl40+win+wp\Treenumerable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
